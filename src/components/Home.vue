@@ -13,8 +13,10 @@
           <v-carousel>
             <v-carousel-item
               v-for="item in meetups"
+              @click="onLoadMeetup(item.id)"
               :key="item.id"
-              :src="item.imageUrl">
+              :src="item.imageUrl"
+              style="cursor:pointer;">
               <div class="title">{{item.title}}</div>
             </v-carousel-item>
           </v-carousel>
@@ -38,7 +40,12 @@
               {imageUrl:'https://c1.staticflickr.com/9/8233/8586789587_c5f7ac6079_b.jpg', id:'sdfgdsdfsdfgdsfgdsf', title:'Meetup in Paris'},
             ]
           }
-      }
+      },
+      methods: {
+        onLoadMeetup(id) {
+          this.$router.push('/meetup/'+id);
+        }
+      },
     }
 </script>
 

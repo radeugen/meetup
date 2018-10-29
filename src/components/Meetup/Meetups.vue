@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout row wrap>
-      <v-flex xs12>
+      <v-flex xs12 sm10 md8 offset-sm1 offset-md2>
         <v-card class="info">
           <v-container fluid>
             <v-layout row>
@@ -18,7 +18,7 @@
                   </div>
                 </v-card-title>
                 <v-card-actions>
-                  <v-btn flat light>
+                  <v-btn flat light to="/meetup/213">
                     <v-icon left>arrow_forward</v-icon>
                     View Meetup</v-btn>
                 </v-card-actions>
