@@ -35,11 +35,12 @@
         name: "Home",
       data() {
           return {
-            meetups: [
-              {imageUrl:'https://cdn.pixabay.com/photo/2015/12/15/06/32/new-york-1093744_960_720.jpg', id:'sdfgdfgdsfgdsf', title:'Meetup in NY'},
-              {imageUrl:'https://c1.staticflickr.com/9/8233/8586789587_c5f7ac6079_b.jpg', id:'sdfgdsdfsdfgdsfgdsf', title:'Meetup in Paris'},
-            ]
           }
+      },
+      computed: {
+        meetups() {
+          return this.$store.getters.featuredMeetups;
+        }
       },
       methods: {
         onLoadMeetup(id) {
