@@ -35,7 +35,7 @@ new Vue({
   render: h => h(App),
   created() {
     firebase.initializeApp({
-      apiKey: "AIzaSyDrYpXtRyythpSPjSkXWzV1flXC6EfxAEU",
+      apiKey: "AIzaSyDrYpXtRyythpSPjSkXWzV1flXC6EfxAEUraPOrt",
       authDomain: "meetup-1128d.firebaseapp.com",
       databaseURL: "https://meetup-1128d.firebaseio.com",
       projectId: "meetup-1128d",
