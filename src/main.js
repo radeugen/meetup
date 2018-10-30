@@ -2,11 +2,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
+import * as firebase from 'firebase'
 // import Vuex from 'vuex'
 import {store} from './store'
 import DateFilter from './filters/date';
 import 'vuetify/dist/vuetify.min.css'
 import colors from 'vuetify/es5/util/colors'
+import AlertComponent from '@/components/Shared/Alert';
+
+Vue.component('app-alert', AlertComponent);
 
 Vue.filter('date', DateFilter);
 Vue.use(Vuetify, { theme: {
@@ -28,5 +32,14 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyDrYpXtRyythpSPjSkXWzV1flXC6EfxAEU",
+      authDomain: "meetup-1128d.firebaseapp.com",
+      databaseURL: "https://meetup-1128d.firebaseio.com",
+      projectId: "meetup-1128d",
+      storageBucket: "meetup-1128d.appspot.com",
+    });
+  }
 })
